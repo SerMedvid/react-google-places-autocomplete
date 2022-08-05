@@ -1,5 +1,5 @@
 import React, { forwardRef, useEffect, useImperativeHandle, useState } from 'react';
-import AsyncSelect from 'react-select/async';
+import AsyncCreatableSelect from 'react-select/async-creatable';
 import { OptionsType, OptionTypeBase } from 'react-select';
 import { useDebouncedCallback } from 'use-debounce';
 import GooglePlacesAutocompleteProps, {
@@ -73,7 +73,7 @@ const GooglePlacesAutocomplete: React.ForwardRefRenderFunction<GooglePlacesAutoc
   }, []);
 
   return (
-    <AsyncSelect
+    <AsyncCreatableSelect
       {...selectProps}
       loadOptions={fetchSuggestions}
       getOptionValue={({ value }) => value.place_id}
